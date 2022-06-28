@@ -31,7 +31,7 @@ When a function has unit result type, the shorthand `return` may be used instead
 
 Motoko provides several kinds of repetition constructs, including:
 
-Motoko では何種類かの繰り返し構成子を
+Motoko では何種類かの繰り返し構成子を:
 
 -   `for` expressions for iterating over members of structured data.
 
@@ -129,7 +129,7 @@ The latter could be cumbersome, if the only way to test a value for `null` were 
 
 The option block, `do ? <block>`, produces a value of type `?T`, when block `<block>` has type `T` and, importantly, introduces the possibility of a break from `<block>`. Within a `do ? <block>`, the null break `<exp> !`, tests whether the result of the expression, `<exp>`, of unrelated option type, `?U`, is `null`. If the result `<exp>` is `null`, control immediately exits the `do ? <block>` with value `null`. Otherwise, the result of `<exp>` must be an option value `?v`, and evaluation of `<exp> !` proceeds with its contents, `v` (of type `U`).
 
-オプション・ブロック `do ? <block>` はブロック `<block>` が型 `T` を持ち,  `<block>` から `break` する可能性があるとき (これが重要) に型 `?T` の値を作成します. __TODO__
+オプション・ブロック `do ? <block>` はブロック `<block>` が型 `T` を持ち,  `<block>` から `break` する可能性があるとき (これが重要) に型 `?T` の値を作成します. `do ? <block>`では, ヌル・ブレイク `<exp> !` で式 `<exp>` の結果 (他とは無関係のオプション型 `?U`) が null かどうかをチェックします. もし 結果 `<exp>` が `null` ならば制御は値 `null` で `do ? <block>` を抜けます. そうでなければ, `<exp>` の結果はオプション値 `?v` のはずで, その中身 `v` (型は `U`) をもって `<exp> !` の評価を続けます.
 
 As a realistic example, we give the definition of a simple function evaluating numeric Expressions built from natural numbers, division and a zero test, encoded as a variant type:
 

@@ -2,7 +2,7 @@
 
 Motoko’s shared functions support a simple form of caller identification that allows you to inspect the Internet Computer **principal** associated with the caller of a function. The principal associated with a call is a value that identifies a unique user or canister smart contract.
 
-Motoko の共有関数は, 簡単なかたちの呼び出し元識別 (関数の呼び出し元に関連付けられている Internet Computer の **principal** を調べられるようにする) をサポートしています.
+Motoko の共有関数は, 簡単なかたちの呼び出し元識別 (関数の呼び出し元に関連付けられている Internet Computer の **principal** を調べられるようにする) をサポートしています. 呼び出しに関連付けられたプリンシパルは 一意なユーザ, あるいはキャニスタ・スマート・コントラクトを識別する値です.
 
 You can use the **principal** associated with the caller of a function to implement a basic form of *access-control* in your program.
 

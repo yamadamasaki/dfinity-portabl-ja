@@ -16,7 +16,7 @@ Through these mechanisms, two actors can coordinate their behavior through async
 
 The examples in this section illustrate how actors share their functions by focusing on variations of the [publish-subscribe pattern](https://en.wikipedia.org/wiki/Publish-subscribe_pattern). In the publish-subscribe pattern, a **publishing** actor records a list of **subscriber** actors to notify when something notable occurs in the publisher’s state. For example, if the publisher actor publishes a new article, the subscriber actors are notified that a new article is available.
 
-この節の例題では, [公開-購読パタン](https://en.wikipedia.org/wiki/Publish-subscribe_pattern) のさまざまな変種に焦点を当てて, アクタがどうやって関数を共有するのかを説明します.
+この節の例題では, [公開-購読パタン](https://en.wikipedia.org/wiki/Publish-subscribe_pattern) のさまざまな変種に焦点を当てて, アクタがどうやって関数を共有するのかを説明します. 公開-購読パタンでは, **公開** アクタが **購読** アクタのリストを記録し, 公開者の状態に注目すべき何かが起きたときにはそのリストのアクタに通知します. 例えば, 公開アクタが新しい投稿を公開したら, 購読アクタは新しい投稿があったことを知らされます
 
 The example below uses two actors in Motoko to build variations of the publisher-subscriber relationship.
 

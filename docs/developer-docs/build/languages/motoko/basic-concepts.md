@@ -279,6 +279,8 @@ Other languages that lack lexical scoping may give a different meaning to this p
 
 Aside from mathematical clarity, the chief practical benefit of lexical scoping is *security*, and its use in building compositionally-secure systems. Specifically, Motoko gives very strong composition properties. For example, nesting your program within a program you do not trust cannot arbitrarily redefine your variables with different meanings.
 
+数学的な明晰さから離れると, レキシカル・スコープのおもな実用上の利益は _セキュリティ_ と, 合成的にセキュアなシステムを構築するときの利用です. 特に Motoko では, 非常に強い合成属性を与えています. 例えば, プログラムを別の信頼の置けない別のプログラムの中にネストしても, 元の変数を別の意味に勝手に再定義できません.
+
 ## Values and evaluation
 
 Once a Motoko expression receives the program’s (single) thread of control, it evaluates eagerly until it reduces to a *result value*.
@@ -411,11 +413,11 @@ Motoko の型検査された式を _正しく型付けされた_ (well-typed) �
 
 First, each well-typed program will evaluate without undefined behavior. That is, the phrase **“well-typed programs don’t go wrong”** applies here. For those unfamiliar with the deeper implications of that phrase, it means that there is a precise space of meaningful (unambiguous) programs, and the type system enforces that we stay within it, and that all well-typed programs have a precise (unambiguous) meaning.
 
-まず, 正しく型付けされたプログラムは, 評価されて未定義の振る舞いをすることはありません. つまり, **"正しく型付けされたプログラムは誤りがない"** という文句はここで当てはまるのです. この文句の深い意味を捉えきれていない人には, __TODO__
+まず, 正しく型付けされたプログラムは, 評価されて未定義の振る舞いをすることはありません. つまり, **"正しく型付けされたプログラムは誤りがない"** という文句はここに当てはまるのです. この文句の深い意味を捉えきれていない人には, 有意味な (曖昧さのない) プログラムの正確な空間があり, 型システムがその空間をはみ出していないこと, および正しく型付けされたプログラムは正確な (曖昧さなのない) 意味を持つことを保証しているのだ, と言っておきましょう.
 
 Furthermore, the types make a precise prediction over the program’s result. If it yields control, the program will generate a *result value* that agrees with that of the original program.
 
-__TODO__
+さらに, この型によってプログラムの結果に対して正確な予測を与えることができるようになります. プログラムの制御が変わったとしても, そのプログラムが返す _返値_ は元のプログラムとまったく一致するはずです. __NOTE:__ この二文目が訳し切れていません. _yield control_ は _制御が途中で (脱出など) で変わる_ 感じなのかと思うのですが, そうすると _original program_ がよく分からない
 
 In either case, the static and dynamic views of the program are linked by and agree with the static type system. This agreement is the central principle of a static type system, and is delivered by Motoko as a core aspect of its design.
 
@@ -493,7 +495,7 @@ let x : Text = 1 + 1
 
 The type annotation `Text` does not agree with the rest of the program, since the type of `1 + 1` is `Nat` and not `Text`, and these types are unrelated by subtyping. Consequently, this program is not well-typed, and the compiler will signal an error (with a message and location) and will not compile or execute it.
 
-`1 + 1` の型は `Nat` であって `Text` ではありませんし, 部分型の関係でもありませんから, `Text` という型注釈はプログラムの他の部分と辻褄が合ってないことになります.
+`1 + 1` の型は `Nat` であって `Text` ではありませんし, 部分型の関係でもありませんから, `Text` という型注釈はプログラムの他の部分と辻褄が合ってないことになります. 結果として, このプログラムは正しく型付けされておらず, コンパイラは (どの場所でどんな内容かというメッセージと共に) エラーを出し, コンパイルも実行もできません.
 
 ## Type errors and messages
 

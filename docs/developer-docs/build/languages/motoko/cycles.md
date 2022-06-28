@@ -228,8 +228,6 @@ Most of the action occurs in `Alice`'s `test()` function:
 
 `Alice` の `test()` 関数で何が起きているかというと:
 
-__TODO__ 以下は退屈なので省略する
-
 Alice dedicates `10_000_000_000_000` of her own cycles for running the piggy bank, by calling `Cycles.add(10_000_000_000_000)` just before creating a new instance, `porky`, of the `PiggyBank`, passing callback `Alice.credit` and capacity (`1_000_000_000`). Passing `Alice.credit` nominates `Alice` as the beneficiary of withdrawals. The `10_000_000_000_000` cycles, minus a small installation fee, are credited to `porky`'s balance without any further action by `porky` initialization code. You can think of this as an electric piggy bank, that consumes its own resources as its used. Since constructing a `PiggyBank` is asynchronous, `Alice` needs to `await` the result.
 
 Alice は `Cycles.add(10_000_000_000_000)` を呼んで, 銀行を運営するのに彼女自身のサイクル `10_000_000_000_000` を納めた後に, コールバック `Alice.credit` と capacity (`1_000_000_000`) を渡して `PiggyBank` の新しいインスタンス `porky` を作ります. `Alice.credit` を渡したことで, `Alice` は報酬の受取手の候補になりました. `porky` の初期化コード以外は特に何もしなくても `10_000_000_000_000` サイクルから少額のインストール手数料を引いたものが `porky` の残高に付いています. 自分で使った分だけ中身が減るので, これは電気仕掛けの豚の貯金箱だと思うかもしれません.`PiggyBank` の作成は非同期なので, `Alice` はその結果を `await` する必要があります.
